@@ -20,4 +20,18 @@ public class AppTest {
     int actual = calc.multiply(3, 4);
     assertThat(actual, is(expected));
   }
+
+  @Test
+  public void canGetResultByDevide() {
+    Calculator calc = new Calculator();
+    int expected = 3;
+    int actual = calc.devide(12, 4);
+    assertThat(actual, is(expected));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void canThrowWhenDevideByZero() {
+    Calculator calc = new Calculator();
+    calc.devide(12, 0);
+  }
 }

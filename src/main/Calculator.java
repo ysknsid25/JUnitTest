@@ -6,6 +6,9 @@ public class Calculator {
   }
 
   public int devide(int x, int y) {
+    if (y == 0) {
+      throw new IllegalArgumentException("devide by zero");
+    }
     return x / y;
   }
 }
