@@ -24,8 +24,13 @@ public class ParameterizedTest {
   }
 
   @Theory
-  public void hasParameterMethodTest(int param, String strparam) throws Exception {
+  public void hasMixedParameterMethodTest(int param, String strparam) throws Exception {
     System.out.println("Parameter is " + param + "," + strparam);
+  }
+
+  @Theory
+  public void hasMultiParameterMethodTest(int x, int y) throws Exception {
+    System.out.println("Parameter is " + x + "," + y);
   }
 
 }
