@@ -17,7 +17,10 @@ public class UserName {
   }
 
   protected void setFirstName(String firstName) {
-    this.firstName = firstName;
+    boolean isValidLength = this.chkUserNameLength(firstName);
+    if (isValidLength) {
+      this.firstName = firstName;
+    }
   }
 
   public String getLastName() {
@@ -25,6 +28,25 @@ public class UserName {
   }
 
   protected void setLastName(String lastName) {
-    this.lastName = lastName;
+    boolean isValidLength = this.chkUserNameLength(lastName);
+    if (isValidLength) {
+      this.lastName = lastName;
+    }
+  }
+
+  /**
+   * ユーザー名の長さチェック
+   * 
+   * @param value
+   * @return
+   */
+  private boolean chkUserNameLength(String value) {
+    if (value == null || value.isEmpty()) {
+      return false;
+    }
+    if (3 <= value.length() && value.length() <= 20) {
+      return true;
+    }
+    return false;
   }
 }
