@@ -46,14 +46,14 @@ public class AppTest {
   public void canGetResultByDevide() {
     Calculator calc = new Calculator();
     int expected = 3;
-    int actual = calc.devide(12, 4);
+    int actual = calc.divide(12, 4);
     assertEquals(actual, expected);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void canThrowWhenDevideByZero() {
     Calculator calc = new Calculator();
-    calc.devide(12, 0);
+    calc.divide(12, 0);
   }
 
   // @Test
